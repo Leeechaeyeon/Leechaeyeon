@@ -1,0 +1,306 @@
+@charset "UTF-8";
+
+/* body */
+html {
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 1;
+    cursor: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    color: #000;
+    background-color: #f0ffff;
+	width:100%;
+    height:100%;
+    overflow: hidden;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+body a:link, body a:visited {
+    color: #000;
+    text-decoration: none;
+}
+body a:hover, body a:active {
+	cursor: none;
+	text-decoration: underline;
+}
+
+#content {
+    position: absolute;
+    height: 100%;
+}
+#profile__less, #profile__more {
+    position: relative;
+    height: calc(100vh - 6.5rem); /* 뷰포트 하이트 - 하단 마키 영역 */
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    margin-left: 3rem;
+    margin-right: 8rem;
+}
+*::-moz-selection { background: #000; color: #fff; }
+*::selection { background: #000; color: #fff; }
+
+h1 {
+	font-family: 'Inter', Helvetica, Arial, sans-serif;
+	font-size: 12.5vw; /* 반응형 */
+	font-weight: normal;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+h2 {
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    height: 12.5vw;
+    font-size: 8vw;
+    font-weight: normal;
+    line-height: 0.9;
+}
+h3 {
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    font-size: 6vw;
+    font-weight: normal;
+    line-height: 1.3;
+    margin-top: 5vw;
+    margin-bottom: 3vw;
+    /*
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    */
+} 
+.tar {text-align: right;}
+
+#fixed {
+	position: relative;
+}
+#fixed h1 {
+    display: inline-block;
+}
+#fixed:hover .hidden_link {
+    opacity: 1;
+    animation: 5s ease-in-out;
+}
+
+#scrollable {
+	position: relative;
+	height: 32vh; /* 높이값 반응형 */
+	overflow-y: scroll;
+	-ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    scroll-snap-type: y mandatory;
+}
+#scrollable::-webkit-scrollbar {
+    display: none;
+}
+#scrollable h1,
+#scrollable h2 {
+    scroll-snap-align: start;
+    margin-bottom: 1rem;
+}
+#marquee {
+    position: relative;
+    width: 100vw;
+    max-width: 100%;
+    height: 7rem;
+    overflow: hidden;
+}
+
+#nav {
+    position: absolute;
+    display: flex;
+    margin-top: 1.2rem;
+    overflow: hidden;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    scroll-snap-type: y mandatory; 	
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 30s linear infinite;
+}
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+#nav a:link {
+    color: #000;
+    font-size: 2em;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.25em 0.5em;
+    margin: 0 0.25em;
+    border: 2px solid;
+    border-radius: 2em;
+    -webkit-border-radius: 2em;
+}
+#nav a:visited {
+    background: #FFF;
+    color: #000;
+}
+#nav a:hover {
+    background: #000;
+    color: #FFF;
+}
+#nav span {
+    background: #000;
+    color: #fff;
+    font-size: 2em;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.25em 0.5em;
+    margin: 0 0.25em;
+    border: 2px solid;
+    border-radius: 2em;
+    -webkit-border-radius: 2em;
+}
+
+.sup {
+	font-size: 3rem;
+	vertical-align: text-top;
+	position: relative;
+	left: 1rem;
+    top: 1.5rem;
+}
+h3 .sup {
+    font-size: 2.5rem;
+    left: 0;
+    top: 0;
+}
+#retype {
+	display:  inline-block;
+	max-width: max-content;
+	width: 2rem;
+    animation: typing-erase 5s linear infinite;
+    overflow: hidden; 
+    border-right: .01em solid #000;
+    white-space: nowrap; 
+    line-height: 1.2;
+}
+#retype::after {
+    content: "";
+    animation: change-text 40s linear infinite;
+}
+@keyframes typing-erase {
+    0% { width: 0 }
+    40% { width: 100% }
+    50%, 100% {width: 0 }
+}
+
+@keyframes change-text {
+	0% { content:"publisher"; }
+    20% { content:"design"; }
+    50% { content:"publisher"; }
+    90% { content:"!@#$%&"; }
+    100% { content:"publisher"; }
+}
+
+#sidebar {
+	position: fixed;
+	right: 4.25rem;
+	top: 3rem;
+	font-size: 1.7rem; /* 반응형 */
+	transform-origin: top right;
+	transform: rotate(-90deg);
+}
+
+
+#cursor {
+	position: absolute;
+    pointer-events: none;
+}
+#cursor__circle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    mix-blend-mode: difference;
+    z-index: 1000;
+}
+#cursor__circle circle {
+    fill: #f0ffff;
+    stroke: black;
+}
+/*
+.inverted { color: #fff;	}
+.inverted::-moz-selection { background: #000; color: #fff; }
+.inverted::selection { background: #000; color: #fff; }
+*/
+
+.hidden {display: none;}
+.hidden_link {
+    opacity: 0;    
+    animation: 5s ease-in-out;
+    display: inline-block;
+    margin-left: 1rem;
+}
+.hidden_link a {
+    display: block;
+    font-size: 3rem;
+}
+.hidden_link:hover a {
+    cursor: none;
+	text-decoration: underline;
+}
+.hidden_link span {
+    display: block;
+    font-size: 2rem;
+    margin-top: 15px;
+    margin-left: 3vw;
+}
+
+
+body.dark {
+	background: #111;
+	color: #fff;
+}
+body.dark a:link, body.dark a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+body.dark a:hover, body.dark a:active {
+	cursor: none;
+	text-decoration: underline;
+}
+
+body.dark *::-moz-selection { background: #fff; color: #111; }
+body.dark *::selection { background: #fff; color: #111; }
+
+body.dark #retype {
+  border-right: .01em solid #fff;
+}
+
+body.dark #nav a:link {
+	background: #111;
+	color: #fff;
+}
+body.dark #nav a:visited {
+	background: #111;
+	color: #fff;
+}
+body.dark #nav a:hover {
+	background: #fff;
+	color: #222;
+}
+
+body.dark #nav span.inverted {
+    background: #fff;
+    color: #111;
+}
+/*
+body.dark .inverted::-moz-selection { background: #f0ffff; color: #111; }
+body.dark .inverted::selection { background: #f0ffff; color: #111; }
+*/
