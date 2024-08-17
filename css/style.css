@@ -83,8 +83,11 @@ h3 {
     margin-bottom: 1rem;
     */
 } 
-.tar {text-align: right;}
 
+.tar {text-align: right;}
+.mobile_ins {
+    display: none;
+}
 #fixed {
 	position: relative;
 }
@@ -111,6 +114,9 @@ h3 {
 #scrollable h2 {
     scroll-snap-align: start;
     margin-bottom: 1rem;
+}
+#mobile__only {
+    display: none;
 }
 #marquee {
     position: relative;
@@ -170,16 +176,19 @@ h3 {
 }
 
 .sup {
-	font-size: 3rem;
-	vertical-align: text-top;
 	position: relative;
 	left: 1rem;
     top: 1.5rem;
+	vertical-align: text-top;
+	font-size: 3rem;
 }
 h3 .sup {
-    font-size: 2.5rem;
     left: 0;
     top: 0;
+    font-size: 2.5rem;
+}
+.mobile_sup {
+    display: none;
 }
 #retype {
 	display:  inline-block;
@@ -200,7 +209,6 @@ h3 .sup {
     40% { width: 100% }
     50%, 100% {width: 0 }
 }
-
 @keyframes change-text {
 	0% { content:"publisher"; }
     20% { content:"design"; }
@@ -208,7 +216,6 @@ h3 .sup {
     90% { content:"!@#$%&"; }
     100% { content:"publisher"; }
 }
-
 #sidebar {
 	position: fixed;
 	right: 4.25rem;
@@ -217,7 +224,6 @@ h3 .sup {
 	transform-origin: top right;
 	transform: rotate(-90deg);
 }
-
 
 #cursor {
 	position: absolute;
@@ -261,8 +267,6 @@ h3 .sup {
     margin-top: 15px;
     margin-left: 3vw;
 }
-
-
 body.dark {
 	background: #111;
 	color: #fff;
@@ -282,7 +286,6 @@ body.dark *::selection { background: #fff; color: #111; }
 body.dark #retype {
   border-right: .01em solid #fff;
 }
-
 body.dark #nav a:link {
 	background: #111;
 	color: #fff;
@@ -295,7 +298,6 @@ body.dark #nav a:hover {
 	background: #fff;
 	color: #222;
 }
-
 body.dark #nav span.inverted {
     background: #fff;
     color: #111;
@@ -304,3 +306,113 @@ body.dark #nav span.inverted {
 body.dark .inverted::-moz-selection { background: #f0ffff; color: #111; }
 body.dark .inverted::selection { background: #f0ffff; color: #111; }
 */
+
+/**************** 모바일 반응형 480px ****************/
+@media all and (max-width:479px) {
+    html {
+        font-size: 16px;
+        line-height: 1;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    #cursor {
+        display: none;
+        visibility: hidden;
+    }
+    #content {
+        width: 100%;
+    }
+    #profile__less, #profile__more {
+        height: calc(100vh - 6.5rem); /* 뷰포트 하이트 - 하단 마키 영역 */
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+    #scrollable {
+        position: relative;
+        height: 16vh;
+    }
+    h1 {
+        font-size: 4rem;
+        margin-top: 10rem;
+    }
+    h2 {
+        font-size: 3rem;
+        line-height: 1;
+    }
+    #fixed h1 {font-size: 4.9rem;}
+    #scrollable h1, #scrollable h2 {
+        height: 16vh;
+    }
+    #profile__more h1 {
+        font-size: 4.9rem;
+    }
+    #profile__more h3 {
+        font-size: 2rem;
+        line-height: 1.25;
+    }
+    .hidden_link {
+        display: none;
+    }
+    #retype {
+        font-size: 2.9rem;
+    }
+    .sup {
+        display: none;
+        visibility: hidden;
+    }
+    .mobile_sup {
+        position: relative;
+        top: 0;
+        left: 0;
+        font-size: 2rem;
+        display: inline-block;
+        border-bottom: 2px solid #000;
+    }
+    h3 > span {
+        display: none;
+    }
+    .mobile_ins {
+        display: inline-block;
+        border-bottom: 2px solid #000;
+    }
+    body.dark .mobile_sup,
+    body.dark .mobile_ins {
+        border-bottom: 2px solid #fff;
+    } 
+    #sidebar {
+        right: 2rem;
+        top: 3rem;
+        font-size: 2rem;
+        transform: rotate(0);
+        line-height: 1.3;
+        text-align: right;
+    }
+    #email {
+        display: block;
+    }
+    #mobile__only {
+        display: block;
+        position: absolute;
+        left: 46%;
+        bottom: 10rem;
+    }
+    #mobile__only p {
+        font-size: 1.625rem;
+    }
+    .links {
+        font-size: 3rem;
+    }
+    .links a {
+        display: inline-block;
+        margin-bottom: 1rem;
+        border-bottom: 3px dotted #000;
+    }
+    body.dark .links a {
+        border-bottom: 3px dotted #fff;
+    }
+
+};
