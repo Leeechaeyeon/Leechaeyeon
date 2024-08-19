@@ -125,15 +125,14 @@ h3 {
     position: relative;
     width: 100vw;
     max-width: 100%;
-    height: 5rem;
+    height: 7rem;
     overflow: hidden;
 }
 
 #nav {
     position: absolute;
-    bottom: 1vh;
     display: flex;
-    margin-top: 1.2rem;
+    margin-top: 1.5rem;
     overflow: hidden;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
@@ -330,43 +329,43 @@ body.dark .inverted::selection { background: #f0ffff; color: #111; }
     #content {
         width: 100%;
     }
-    #profile__less, #profile__more {
-        height: calc(100vh - 5rem); /* 뷰포트 하이트 - 하단 마키 영역 */
-        margin-left: 5vw;
-        margin-right: 5vw;
-    }
-    #profile__more {
-        background: #f0ffff;
-        z-index: 10;
-    }
     #scrollable {
         position: relative;
         height: 18vh;
     }
+    #scrollable h1, 
+    #scrollable h2 {
+        height: 18vh;
+    }
+    #profile__less, 
+    #profile__more {
+        height: calc(100vh - 7rem); /* 뷰포트 하이트 - 하단 마키 영역 */
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
     h1 {
-        font-size: 17vw;
-        margin-top: 15vh;
+        font-size: 17.5vw;
+        margin-top: 17vh;
     }
     h2 {
         font-size: 11vw;
         line-height: 1;
     }
-    #fixed h1 {font-size: 17vw;}
-    #scrollable h1, #scrollable h2 {
-        height: 18vh;
-    }
-    #profile__more h1 {
-        font-size: 17vw;
-    }
-    #profile__more h3 {
+    h3 {
         font-size: 6vw;
         line-height: 1.25;
+        margin-top: 3vw;   
+        margin-bottom: 1vw;
     }
-    .hidden_link {
-        display: none;
+    h4 {
+        font-size: 1rem;
+        font-weight: normal;
+        line-height: 1.3;
+        margin-top: 0;
+        margin-bottom: 0.625rem;
     }
     #retype {
-        font-size: 2.9rem;
+        font-size: 12.5vw;
     }
     .sup {
         display: none;
@@ -380,17 +379,41 @@ body.dark .inverted::selection { background: #f0ffff; color: #111; }
         display: inline-block;
         border-bottom: 2px solid #000;
     }
-    h3 > span {
-        display: none;
-    }
     .mobile_ins {
         display: inline-block;
+        line-height: 1;
         border-bottom: 2px solid #000;
     }
+
     body.dark .mobile_sup,
     body.dark .mobile_ins {
         border-bottom: 2px solid #fff;
     } 
+    #mobile__only {
+        display: block;
+        position: absolute;
+        left: 36vw;
+        bottom: 0;
+    }
+    #mobile__only p {
+        font-size: 1.25rem;
+        width: 89%;
+        margin-bottom: 1vh;
+    }
+
+    .links a {
+        display: inline-block;
+        font-size: 10vw;
+        border-bottom: 3px dotted #000;
+        margin-bottom: 0.25rem;
+    }
+    body.dark .links a {
+        border-bottom: 3px dotted #fff;
+    }
+    .hidden_link {
+        display: none;
+    }
+    
     #sidebar {
         right: 2rem;
         top: 3vh;
@@ -403,29 +426,5 @@ body.dark .inverted::selection { background: #f0ffff; color: #111; }
     #email {
         display: block;
     }
-    #mobile__only {
-        display: block;
-        position: absolute;
-        left: 36vw;
-        bottom: 13vh;
-    }
-    #mobile__only p {
-        font-size: 1.625rem;
-        width: 90%;
-        margin-bottom: 1vh;
-    }
-    .links {
-        font-size: 3rem;
-    }
-    .links a {
-        display: inline-block;
-        margin-bottom: 0.25rem;
-        border-bottom: 3px dotted #000;
-    }
-    body.dark .links a {
-        border-bottom: 3px dotted #fff;
-    }
-    #nav {
-        bottom: 2vh;
-    }
+
 }
