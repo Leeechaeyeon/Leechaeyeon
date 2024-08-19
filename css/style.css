@@ -90,6 +90,9 @@ h3 {
 }
 #fixed {
 	position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-end;
 }
 #fixed h1 {
     display: inline-block;
@@ -122,12 +125,13 @@ h3 {
     position: relative;
     width: 100vw;
     max-width: 100%;
-    height: 7rem;
+    height: 6rem;
     overflow: hidden;
 }
 
 #nav {
     position: absolute;
+    bottom: 1vh;
     display: flex;
     margin-top: 1.2rem;
     overflow: hidden;
@@ -327,25 +331,25 @@ body.dark .inverted::selection { background: #f0ffff; color: #111; }
         width: 100%;
     }
     #profile__less, #profile__more {
-        height: calc(100vh - 6.5rem); /* 뷰포트 하이트 - 하단 마키 영역 */
-        margin-left: 2rem;
-        margin-right: 2rem;
+        height: calc(100vh - 5rem); /* 뷰포트 하이트 - 하단 마키 영역 */
+        margin-left: 5vw;
+        margin-right: 5vw;
     }
     #scrollable {
         position: relative;
-        height: 16vh;
+        height: 18vh;
     }
     h1 {
-        font-size: 4rem;
-        margin-top: 10rem;
+        font-size: 16vw;
+        margin-top: 10vh;
     }
     h2 {
-        font-size: 3rem;
+        font-size: 11vw;
         line-height: 1;
     }
-    #fixed h1 {font-size: 4.9rem;}
+    #fixed h1 {font-size: 16vw;}
     #scrollable h1, #scrollable h2 {
-        height: 16vh;
+        height: 18vh;
     }
     #profile__more h1 {
         font-size: 4.9rem;
@@ -385,8 +389,8 @@ body.dark .inverted::selection { background: #f0ffff; color: #111; }
     } 
     #sidebar {
         right: 2rem;
-        top: 3rem;
-        font-size: 2rem;
+        top: 3vh;
+        font-size: 7vw;
         transform: rotate(0);
         line-height: 1.3;
         text-align: right;
@@ -397,22 +401,26 @@ body.dark .inverted::selection { background: #f0ffff; color: #111; }
     #mobile__only {
         display: block;
         position: absolute;
-        left: 46%;
-        bottom: 10rem;
+        left: 36vw;
+        bottom: 13vh;
     }
     #mobile__only p {
         font-size: 1.625rem;
+        width: 90%;
+        margin-bottom: 1vh;
     }
     .links {
         font-size: 3rem;
     }
     .links a {
         display: inline-block;
-        margin-bottom: 1rem;
+        margin-bottom: 0.25rem;
         border-bottom: 3px dotted #000;
     }
     body.dark .links a {
         border-bottom: 3px dotted #fff;
     }
-
+    #nav {
+        bottom: 2vh;
+    }
 };
