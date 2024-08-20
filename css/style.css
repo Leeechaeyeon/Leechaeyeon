@@ -19,6 +19,8 @@ body {
     background-color: #f0ffff;
 	width:100%;
     height:100%;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
     animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1;
@@ -72,22 +74,27 @@ h2 {
     line-height: 0.9;
 }
 h3 {
-    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    font-family: 'Inter','NotoSanKR', Helvetica, Arial, sans-serif;
     font-size: 6vw;
     font-weight: normal;
     line-height: 1.3;
     margin-top: 5vw;
     margin-bottom: 3vw;
-    /*
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-    */
 } 
-
-.tar {text-align: right;}
-.mobile_ins {
-    display: none;
+h4 {
+    font-family: 'NotoSanKR', Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 0.625rem;
 }
+p {
+    font-family: 'Inter','NotoSanKR', Helvetica, Arial, sans-serif;
+    font-weight: normal;
+}
+.tar {text-align: right;}
+
 #fixed {
 	position: relative;
     display: flex;
@@ -104,7 +111,7 @@ h3 {
 
 #scrollable {
 	position: relative;
-	height: 32vh; /* 높이값 반응형 */
+	height: 30vh; /* 높이값 반응형 */
 	overflow-y: scroll;
 	-ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
@@ -118,8 +125,14 @@ h3 {
     scroll-snap-align: start;
     margin-bottom: 1rem;
 }
-#mobile__only {
-    display: none;
+.introducing {
+    display: block;
+    margin: 2vh 0;
+}
+.introducing p {
+    font-size: 3vw;
+    line-height: 1.3;
+    margin: 0.25rem 0 0 0;
 }
 #marquee {
     position: relative;
@@ -128,7 +141,6 @@ h3 {
     height: 7rem;
     overflow: hidden;
 }
-
 #nav {
     position: absolute;
     display: flex;
@@ -258,7 +270,7 @@ h3 .sup {
 }
 .hidden_link a {
     display: block;
-    font-size: 3rem;
+    font-size: 2.375rem;
 }
 .hidden_link:hover a {
     cursor: none;
@@ -266,7 +278,7 @@ h3 .sup {
 }
 .hidden_link span {
     display: block;
-    font-size: 2rem;
+    font-size: 1.625rem;
     margin-top: 15px;
     margin-left: 3vw;
 }
@@ -309,6 +321,12 @@ body.dark #nav span.inverted {
 body.dark .inverted::-moz-selection { background: #f0ffff; color: #111; }
 body.dark .inverted::selection { background: #f0ffff; color: #111; }
 */
+.mobile__only {
+    display: none!important;
+}
+.web__only {
+    display: block;
+}
 
 /**************** 모바일 반응형 480px ****************/
 @media all and (max-width:479px) {
@@ -358,11 +376,11 @@ body.dark .inverted::selection { background: #f0ffff; color: #111; }
         margin-bottom: 1vw;
     }
     h4 {
-        font-size: 1rem;
+        font-size: 4vw;
         font-weight: normal;
-        line-height: 1.3;
+        line-height: 1.4;
         margin-top: 0;
-        margin-bottom: 0.625rem;
+        margin-bottom: 0;
     }
     #retype {
         font-size: 12.5vw;
@@ -379,28 +397,19 @@ body.dark .inverted::selection { background: #f0ffff; color: #111; }
         display: inline-block;
         border-bottom: 2px solid #000;
     }
-    .mobile_ins {
-        display: inline-block;
-        line-height: 1;
-        border-bottom: 2px solid #000;
-    }
-
-    body.dark .mobile_sup,
-    body.dark .mobile_ins {
+    body.dark .mobile_sup {
         border-bottom: 2px solid #fff;
     } 
-    #mobile__only {
-        display: block;
+    .hidden_link {
         position: absolute;
         left: 36vw;
         bottom: 0;
     }
-    #mobile__only p {
+    .hidden_link p {
         font-size: 1.25rem;
         width: 89%;
         margin-bottom: 1vh;
     }
-
     .links a {
         display: inline-block;
         font-size: 10vw;
@@ -410,10 +419,26 @@ body.dark .inverted::selection { background: #f0ffff; color: #111; }
     body.dark .links a {
         border-bottom: 3px dotted #fff;
     }
-    .hidden_link {
-        display: none;
+    .introducing {
+        margin: 2vh 0;
+        display: flex!important;
+        align-items: flex-end;
+        flex-direction: column;
     }
-    
+    .introducing a {
+        display: inline-block;
+        font-size: 5vw;
+        line-height: 1;
+        border-bottom: 2px solid #000;
+        margin-bottom: 0.625rem;
+    }
+    body.dark .introducing a {
+        border-bottom: 2px solid #fff;
+    }
+    .introducing p {
+        line-height: 1.25;
+        margin: 0.25rem 0 0 0;
+    }
     #sidebar {
         right: 2rem;
         top: 3vh;
@@ -427,4 +452,12 @@ body.dark .inverted::selection { background: #f0ffff; color: #111; }
         display: block;
     }
 
+
+
+    .mobile__only {
+        display: block;
+    }
+    .web__only {
+        display: none!important;
+    }
 }
