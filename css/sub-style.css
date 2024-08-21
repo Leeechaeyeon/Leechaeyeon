@@ -245,7 +245,7 @@ body.dark .submenu li {
     margin-bottom: 15px;
 }
 .submenu li div{
-    flex: 1 0 auto;
+    flex: 1;
 }
 .submenu li p{
     margin-top: 8px;
@@ -262,8 +262,67 @@ body.dark .submenu li {
 .desc {
     margin-left: 10px;
 }
-
-
+/**************** resume 모바일 반응형 480px ****************/
+@media all and (max-width:479px) {
+    html {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        margin: 0;
+        padding: 0 1rem;
+        box-sizing: border-box;
+    }
+    .wrap.h100 {
+        width: 100%;
+        margin: 0;
+    }
+    .img-name {
+        width: 90vw;
+        height: 200px;
+        margin-left: 0;
+    }
+    #profile__wrap {
+        margin-top: -2rem;
+    }
+    .img-webpublisher {
+        width: 300px;
+        height: 140px;
+    }
+    #describe {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3,1fr);
+        gap: 3rem;
+        margin-top: 0;
+    }
+    .desc__wrap:nth-child(2) {
+        align-self: center;
+    }
+    .desc__wrap:nth-child(3) {
+        grid-column:auto;
+    }
+    #history {
+        display: flex;
+        flex-direction: column;
+    }
+    #history__title {
+        padding-bottom: 1rem;
+    }
+    #accordion {
+        width: 100%;
+    }
+    
+    #career .submenu li {
+        flex-direction: column-reverse;
+    }
+    #career .submenu .total {
+        flex-direction: row;
+    }
+    .desc {
+        margin-left: 0;
+        text-wrap: pretty;
+    }
+}
 /******************* portfolio ******************/
 body.dark {
     background: #000;
@@ -356,4 +415,10 @@ body.dark .section__wrap .accordion {
 }
 .m3 {
     background: url(../img/)no-repeat center center / cover;
+}
+
+
+/**************** 모바일 반응형 480px ****************/
+@media all and (max-width:479px) {
+    
 }
